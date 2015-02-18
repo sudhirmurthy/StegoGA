@@ -16,7 +16,9 @@ public class TestMain {
 			s.Encrypt();
 			s.Decrypt();
 			MyImageHandler img = new MyImageHandler();
-			img.GetImage("lena2_128.jpg");
+			img.GetImage("redbull.jpg");
+			int depth = img.getBitDepth();
+			System.out.println("Image depth found is :" + depth);
 		}catch(Exception e){
 			System.out.println("Exception in main thread..."+e.getMessage());
 		}	
