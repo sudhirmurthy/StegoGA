@@ -9,7 +9,11 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
+/**
+ *IStegoCrypt Interface
+ *Desc:  Interface to define the encrpytion and decryption method
+ **/
 public interface IStegoCrypt {
-	public void Encrypt() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeySpecException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException;
+	public void Encrypt();
 	public void Decrypt();
 }

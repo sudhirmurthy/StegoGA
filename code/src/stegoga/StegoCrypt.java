@@ -15,7 +15,9 @@ import javax.crypto.spec.SecretKeySpec;
 /*
  * Private key crytography implementation.
  * Uses AES Algorithm to encrypt and decrpyt the 
- * message with a chosen key.
+ * message with a chosen key. It implements the
+ * IStegoCrypt interface to add implementation
+ * to the Encrypt() and Decrypt() methods.
  */
 public class StegoCrypt implements IStegoCrypt {
 	private byte[] messageBytes;
@@ -58,7 +60,7 @@ public class StegoCrypt implements IStegoCrypt {
 		return true;
 	}	
 	
-	public void Encrypt() throws NoSuchAlgorithmException,NoSuchPaddingException, InvalidKeySpecException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException {
+	public void Encrypt(){
 		try{
 			System.out.println("in Encrypt..Starting process..");
 			this.buildKey(this.pass);
@@ -69,6 +71,7 @@ public class StegoCrypt implements IStegoCrypt {
 			System.out.println("encpytion finished..");
 			System.out.println(new String(this.cipherBytes,"UTF8"));
 		}catch(Exception e){
+			//throws NoSuchAlgorithmException,NoSuchPaddingException, InvalidKeySpecException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException
 			System.out.println("Exception whilst encoding..");
 			e.printStackTrace();
 		}
@@ -90,6 +93,7 @@ public class StegoCrypt implements IStegoCrypt {
 			System.out.println("decryption finished..");
 			System.out.println(new String(this.messageBytes,"UTF8"));
 		}catch(Exception e){
+			//throws NoSuchAlgorithmException,NoSuchPaddingException, InvalidKeySpecException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException
 			System.out.println("Exception in Decrypt function...");
 		}
 	}

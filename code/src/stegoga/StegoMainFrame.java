@@ -3,11 +3,11 @@ package stegoga;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javafx.stage.FileChooser;
-import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import java.awt.BorderLayout;
+import javax.swing.JButton;
 
-public class StegoGA {
+public class StegoMainFrame {
 
 	private JFrame frame;
 
@@ -18,7 +18,7 @@ public class StegoGA {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StegoGA window = new StegoGA();
+					StegoMainFrame window = new StegoMainFrame();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +30,7 @@ public class StegoGA {
 	/**
 	 * Create the application.
 	 */
-	public StegoGA() {
+	public StegoMainFrame() {
 		initialize();
 	}
 
@@ -39,12 +39,14 @@ public class StegoGA {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 606, 472);
+		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
 		
-		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.setBounds(23, 17, 550, 286);
-		frame.getContentPane().add(fileChooser);
+		JLabel lblNewLabel = new JLabel("New label");
+		frame.getContentPane().add(lblNewLabel, BorderLayout.NORTH);
+		
+		JButton btnClickme = new JButton("ClickMe");
+		frame.getContentPane().add(btnClickme, BorderLayout.CENTER);
 	}
+
 }

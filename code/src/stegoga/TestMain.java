@@ -12,13 +12,15 @@ public class TestMain {
 		try{
 			StegoCrypt s = new StegoCrypt();
 			s.getPassword("Pass888899999999");
-			s.getPlainText("The World Cup begins tomorrow..");
+			s.getPlainText("The Steganography Project");
 			s.Encrypt();
 			s.Decrypt();
-			MyImageHandler img = new MyImageHandler();
-			img.GetImage("redbull.jpg");
-			int depth = img.getBitDepth();
-			System.out.println("Image depth found is :" + depth);
+			ImageHandler img = new ImageHandler();
+			img.GetImage("lena64.bmp");
+			System.out.println("Started tests on the two image..");
+			ImageTesting test = new ImageTesting("lena64.bmp", "lena64_modified.bmp");
+			test.performPSNRTest();
+			
 		}catch(Exception e){
 			System.out.println("Exception in main thread..."+e.getMessage());
 		}	
