@@ -51,7 +51,7 @@ Simple Explanation
 http://www.theprojectspot.com/tutorial-post/creating-a-genetic-algorithm-for-beginners/3
 http://www.obitko.com/tutorials/genetic-algorithms/ga-basic-description.php
 
-issues
+Issues
 ----------------------------------------------------
 signed integer dipslay of bytes
 validation
